@@ -1,0 +1,15 @@
+package com.shen.demo.services.loan.repository;
+
+import java.util.List;
+
+import com.shen.demo.services.loan.model.LoanAccModel;
+
+public interface LoanAccRepository {
+  int save(LoanAcc book);
+
+  LoanAcc findById(Long id);
+
+  List<LoanAcc> findAll();
+
+  
+}
