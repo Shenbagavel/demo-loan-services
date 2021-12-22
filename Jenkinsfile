@@ -5,7 +5,7 @@ node{
    def tomcatStatus = ''
    stage('GIT CHECKOUT'){
    
-     git 'https://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@github.com/Shenbagavel/demo-loan-services.git'
+     git branch: 'main', url:'https://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@github.com/Shenbagavel/demo-loan-services.git'
    }
    stage('COMPILE_BUILD'){
       // Get maven home path
