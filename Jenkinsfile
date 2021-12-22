@@ -5,7 +5,7 @@ node{
    def tomcatStatus = ''
    stage('GIT CHECKOUT'){
    
-     git 'https://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@github.com/Shenbagavel/demo-loan-services            .git'
+     git 'https://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@github.com/Shenbagavel/demo-loan-services.git'
    }
    stage('COMPILE_BUILD'){
       // Get maven home path
@@ -25,7 +25,7 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
-     bat "copy target\\demo-loan-services            -1.0.0.war \"${tomcatWeb}\\demo-loan-services            -1.0.0.war\""
+     bat "copy target\\demo-loan-services-1.0.0.war \"${tomcatWeb}\\demo-loan-services-1.0.0.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
