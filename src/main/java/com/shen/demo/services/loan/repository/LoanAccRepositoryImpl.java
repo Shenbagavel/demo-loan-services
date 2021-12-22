@@ -24,7 +24,7 @@ public class LoanAccRepositoryImpl implements LoanAccRepository {
   public int save(LoanAccModel loanAccModel) {
 	  try {
 		  logger.debug("inside save");
-    return jdbcTemplate.update("INSERT INTO loan_Acc (acc_no, customer_no, loan_Amount, no_of_Tenor,interest_Rate,interest_amount,total_payable_Amount,id) VALUES(?,?,?,?,?,?,?)",
+    return jdbcTemplate.update("INSERT INTO loan_Acc (acc_no, customer_no, loan_Amount, no_of_Tenor,interest_Rate,interest_amount,total_payable_Amount,id) VALUES(?,?,?,?,?,?,?,?)",
         new Object[] { loanAccModel.getAccNo(), loanAccModel.getCustomerNo(), loanAccModel.getLoanAmount(),loanAccModel.getNoOfTenor(),
 		loanAccModel.getInterestRate(),loanAccModel.getInterestAmount(),loanAccModel.getTotalPayableAmount(),loanAccModel.getId()
 		
