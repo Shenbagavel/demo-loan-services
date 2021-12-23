@@ -1,7 +1,7 @@
 node{
 
-   def tomcatWeb = 'D:\\softwares\\aTomcat_Server_9.0.56_Server\\apache-tomcat-9.0.56\\webapps'
-   def tomcatBin = 'D:\\softwares\\aTomcat_Server_9.0.56_Server\\apache-tomcat-9.0.56\\bin'
+   def tomcatWeb = '/opt/apache-tomcat-9.0.56/webapps'
+   def tomcatBin = '/opt/apache-tomcat-9.0.56/bin'
    def tomcatStatus = ''
    stage('GIT CHECKOUT'){
    
@@ -19,17 +19,17 @@ node{
                     echo  Stopped
                ) ELSE (
                echo running
-                  "${tomcatBin}\\shutdown.bat"
+                  "${tomcatBin}/shutdown.sh"
                   sleep(time:10,unit:"SECONDS") 
                )
 '''
    }*/
    stage('Deploy to Tomcat'){
-     bat "copy target\\demo-loan-services-1.0.0.war \"${tomcatWeb}\\demo-loan-services-1.0.0.war\""
+     bat "copy target\\demo-loan-services-1.0.0.war \"${tomcatWeb}/demo-loan-services-1.0.0.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
-         bat "${tomcatBin}\\startup.bat"
+         bat "${tomcatBin}/startup.sh"
          sleep(time:100,unit:"SECONDS")
    }
    
