@@ -30,7 +30,7 @@ node{
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
          sh "${tomcatBin}/startup.sh"
-         sleep 50s
+         //sleep 50s
    }
    
 }
