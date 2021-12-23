@@ -10,9 +10,9 @@
 	</parent>
 	<packaging>war</packaging>
 	<groupId>com.shen.demo</groupId>
-	<artifactId>demo-loan-services            </artifactId>
+	<artifactId>demo-loan-services</artifactId>
 	<version>1.0.0</version>
-	<name>demo-loan-services            </name>
+	<name>demo-loan-services</name>
 	<description>Spring Boot Demo App</description>
 	<properties>
 		<java.version>1.8</java.version>
