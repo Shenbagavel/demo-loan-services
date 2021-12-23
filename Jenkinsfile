@@ -19,7 +19,7 @@ node{
                     echo  Stopped
                ) ELSE (
                echo running
-                  "${tomcatBin}/shutdown.sh"
+                sh  "${tomcatBin}/shutdown.sh"
                   sleep(time:10,unit:"SECONDS") 
                )
 '''
@@ -29,8 +29,8 @@ node{
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
-         bat "${tomcatBin}/startup.sh"
-         sleep(time:100,unit:"SECONDS")
+         sh "${tomcatBin}/startup.sh"
+         sleep 50s
    }
    
 }
