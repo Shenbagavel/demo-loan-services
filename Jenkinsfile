@@ -45,12 +45,12 @@ node{
     stage('Publish image to Docker Hub') {
         withDockerRegistry([ credentialsId: "DOCKERHUB", url: "" ]) {
         try {
-          sh  'docker push demo-loan-services:latest'
+            sh  'docker push gshenbagavel/demo-loan-services:latest'
         //  sh  'docker push demo-loan-services:$BUILD_NUMBER' 
             }
         catch (exc) {
         }        
-        
+          echo 'image push failed'
         } 
        } 
        
