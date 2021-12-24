@@ -18,12 +18,21 @@ node{
       sh "${mvnHome}/bin/mvn package"
       }
       
-    stage('Docker Build and Tag') {
-                sh 'docker build -t demo-loan-services:latest .' 
-               // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
+    stage('Remove Old Image Docker Build and Tag') {
+            sh 'docker stop $(docker ps -aq)'
+            sh 'docker rm $(docker ps -aq)'
+            sh 'docker rmi $(docker images -q)'
+            sh 'docker build -t demo-loan-services:latest .' 
+            // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
         }
-    
-     
+        
+    stage('Publish image to Docker Hub') {
+        withDockerRegistry([ credentialsId: "DOCKERHUB", url: "" ]) {
+          sh  'docker push gshenbagavel/demo-loan-services:latest'
+        //  sh  'docker push gshenbagavel/demo-loan-services:$BUILD_NUMBER' 
+        } 
+       } 
+       
     stage('Run Docker Image') {
                 sh 'docker run -d -p 0.0.0.0:9002:9000 demo-loan-services'
  
