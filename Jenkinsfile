@@ -5,8 +5,7 @@ node{
    def tomcatStatus = ''
    
    
-      
-  stages {
+  
       stage('Git Checkout') {
            steps {
              
@@ -38,6 +37,5 @@ node{
             }
         }
         
-    
-    }
+  
 }
