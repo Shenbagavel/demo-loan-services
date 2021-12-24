@@ -7,12 +7,9 @@ node{
    
   
       stage('Git Checkout') {
-           steps {
              
                 git branch: 'main', url:'https://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@github.com/Shenbagavel/demo-loan-services.git'
-             
-          }
-        }
+            }
 	 
         
     stage('Compile and Build'){
@@ -22,19 +19,14 @@ node{
       }
       
     stage('Docker Build and Tag') {
-           steps {
-              
                 sh 'docker build -t demo-loan-services:latest .' 
-                sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
-          }
+               // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
         }
     
      
     stage('Run Docker Image') {
-            steps {
                 sh 'docker run -d -p 0.0.0.0:9002:9000 demo-loan-services'
  
-            }
         }
         
   

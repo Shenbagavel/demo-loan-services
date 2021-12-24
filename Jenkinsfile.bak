@@ -5,15 +5,11 @@ node{
    def tomcatStatus = ''
    
    
-      
-  stages {
+  
       stage('Git Checkout') {
-           steps {
              
                 git branch: 'main', url:'https://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@github.com/Shenbagavel/demo-loan-services.git'
-             
-          }
-        }
+            }
 	 
         
     stage('Compile and Build'){
@@ -38,6 +34,5 @@ node{
             }
         }
         
-    
-    }
+  
 }
