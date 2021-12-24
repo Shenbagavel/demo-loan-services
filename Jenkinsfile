@@ -65,7 +65,7 @@ node{
             }
         catch (exc) {
         }        
-          echo 'Kubernetes Deployment Fail'
+          echo 'Kubernetes Deployment Failed CHeck'
         }     
  
         } 
