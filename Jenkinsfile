@@ -59,5 +59,14 @@ node{
  
         }
         
-  
+    stage('Deploy in Kubenetes') {
+        try{  
+                sh 'kubectl apply -f deployment.yml'
+            }
+        catch (exc) {
+        }        
+          echo 'Kubernetes Deployment Fail'
+        }     
+ 
+        } 
 }
