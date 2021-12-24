@@ -19,17 +19,33 @@ node{
       }
       
     stage('Remove Old Image Docker Build and Tag') {
+        try {
             sh 'docker stop $(docker ps -aq)'
+            }
+        catch (exc) {
+              echo 'No Process to stop'
+        }
+         try {
             sh 'docker rm $(docker ps -aq)'
+            }
+        catch (exc) {
+              echo 'No process to remove'
+        }
+         try {
             sh 'docker rmi $(docker images -q)'
+            }
+        catch (exc) {
+              echo 'No image to remove'
+        }        
+        
             sh 'docker build -t demo-loan-services:latest .' 
-            // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
+          // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
         }
         
     stage('Publish image to Docker Hub') {
         withDockerRegistry([ credentialsId: "DOCKERHUB", url: "" ]) {
-          sh  'docker push gshenbagavel/demo-loan-services:latest'
-        //  sh  'docker push gshenbagavel/demo-loan-services:$BUILD_NUMBER' 
+          sh  'docker push demo-loan-services:latest'
+        //  sh  'docker push demo-loan-services:$BUILD_NUMBER' 
         } 
        } 
        
