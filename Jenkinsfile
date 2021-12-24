@@ -50,7 +50,7 @@ node{
             }
         catch (exc) {
         }        
-          echo 'image push failed'
+          echo 'Docker image push failed'
         } 
        } 
        
