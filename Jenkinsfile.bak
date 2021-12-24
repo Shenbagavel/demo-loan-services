@@ -24,13 +24,41 @@ node{
                )
 '''
    }*/
+   /*
    stage('Deploy to Tomcat'){
      sh "cp target/demo-loan-services-1.0.0.war \"${tomcatWeb}/demo-loan-services-1.0.0.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
          sh "${tomcatBin}/startup.sh"
-         sleep 50s
+         //sleep 50s
    }
+   */
    
+   stage('Docker Build and Tag') {
+           steps {
+              
+                sh 'docker build -t demo-loan-services:latest .' 
+                //sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
+          }
+        }
+		/*
+	stage('Publish image to Docker Hub') {
+          
+            steps {
+        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+          sh  'docker push gshenbagavel/demo-loan-services:latest'
+        }
+                  
+          }
+        }
+ */		
+	stage('Run Docker Demo Web App Container') {
+             
+            steps 
+			{
+                sh "docker run -d -p 0.0.0.0:9002:9000 loan-app"
+ 
+            }
+        }
 }
