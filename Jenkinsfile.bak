@@ -3,7 +3,7 @@ node{
    def tomcatWeb = '/opt/apache-tomcat-9.0.56/webapps'
    def tomcatBin = '/opt/apache-tomcat-9.0.56/bin'
    def tomcatStatus = ''
-   stage('GIT CHECKOUT'){
+   stage('GIT Checkout'){
    
      git branch: 'main', url:'https://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@github.com/Shenbagavel/demo-loan-services.git'
    }
@@ -57,7 +57,7 @@ node{
              
             steps 
 			{
-                sh "docker run -d -p 0.0.0.0:9002:9000 loan-app"
+                sh 'docker run -d -p 0.0.0.0:9002:9000 demo-loan-services'
  
             }
         }

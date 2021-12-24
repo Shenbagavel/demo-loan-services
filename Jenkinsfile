@@ -42,22 +42,12 @@ node{
                 //sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
           }
         }
-		/*
-	stage('Publish image to Docker Hub') {
-          
-            steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-          sh  'docker push gshenbagavel/demo-loan-services:latest'
-        }
-                  
-          }
-        }
- */		
+	
 	stage('Run Docker Demo Web App Container') {
              
             steps 
 			{
-                sh "docker run -d -p 0.0.0.0:9002:9000 loan-app"
+                sh 'docker run -d -p 0.0.0.0:9002:9000 demo-loan-services'
  
             }
         }
