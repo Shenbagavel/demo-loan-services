@@ -24,7 +24,7 @@ import com.shen.demo.services.loan.model.LoanAccModel;
 import com.shen.demo.services.loan.repository.LoanAccRepository;
 import com.shen.demo.services.loan.process.LoanInterestProcessor;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*",, allowedHeaders = "*")
 @RestController
 @RequestMapping("/api")
 public class LoanCalcController {

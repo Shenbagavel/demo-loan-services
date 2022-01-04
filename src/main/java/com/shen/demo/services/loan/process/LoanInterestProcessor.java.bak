@@ -34,7 +34,7 @@ public class LoanInterestProcessor{
 		
 		
 	try{
-		logger.debug("inside calc amount for customer:"+loanAccDto.getCustomerNo()+"@AccNo:"+loanAccDto.getAccNo());
+		logger.debug("inside calc amount");
 		BigDecimal intAmount = BigDecimal.ONE;
 		BigDecimal intPercentage = BigDecimal.ONE;
 //intPercentage = loanAccDto.getInterestRate() / 100;

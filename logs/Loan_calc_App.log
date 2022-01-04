@@ -22,3 +22,19 @@
 2021-12-24 07:22:58,681 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
 2021-12-24 07:22:58,697 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
 2021-12-24 07:23:02,939 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 4.665 seconds (JVM running for 7.413)
+2022-01-02 17:23:29,165 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 3976 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-02 17:23:29,271 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-02 17:23:29,271 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-02 17:23:33,308 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 4.46 seconds (JVM running for 6.467)
+2022-01-02 17:35:09,859 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 14936 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-02 17:35:09,891 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-02 17:35:09,891 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-02 17:35:15,726 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 6.24 seconds (JVM running for 8.719)
+2022-01-02 19:49:30,038 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 6788 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-02 19:49:30,085 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-02 19:49:30,085 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-02 19:49:39,909 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 10.732 seconds (JVM running for 15.411)
+2022-01-02 19:57:22,837 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 5716 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-02 19:57:22,963 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-02 19:57:22,963 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-02 19:57:31,198 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 9.197 seconds (JVM running for 12.995)
