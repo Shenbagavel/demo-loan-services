@@ -28,8 +28,8 @@ spec:
   selector:
     app: demo-loan-services-app
   ports:
-    - port: 8081
-      targetPort: 8081
+    - port: 9100
+      targetPort: 9100
       nodePort: 30008
   type: LoadBalancer
 ---
