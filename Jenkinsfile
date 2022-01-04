@@ -68,27 +68,29 @@ node{
              
             }
         catch (exc) {
+        echo 'Kubernetes Delete deployment Failed CHeck'
         }        
-          echo 'Kubernetes Delete deployment Failed CHeck'
-        }     
+                   
         
         try{  
                
                 sh 'kubectl delete services demo-loan-services-kuberapp'
             }
         catch (exc) {
+        echo 'Kubernetes Delete Services Failed CHeck'
         }        
-          echo 'Kubernetes Delete Services Failed CHeck'
-        }     
+          
+        
         
         try{  
                sh 'kubectl delete pods --all'
                
             }
         catch (exc) {
+        echo 'Kubernetes Delete pods Failed CHeck'
         }        
-          echo 'Kubernetes Delete pods Failed CHeck'
-        }     
+          
+       
         
         try{  
                  
@@ -96,20 +98,18 @@ node{
                
             }
         catch (exc) {
+         echo 'Kubernetes Delete daemon Failed CHeck'
         }        
-          echo 'Kubernetes Delete daemon Failed CHeck'
-        }     
-        
-        
-        
+         
+               
         try{  
                 sh 'kubectl apply -f deployment.yml'
                 sh 'kubectl expose deployment/demo-loan-services-deployment'
             }
         catch (exc) {
-        }        
           echo 'Kubernetes Deployment Failed CHeck'
+          
         }     
- 
+    }
        
 }
