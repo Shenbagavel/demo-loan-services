@@ -39,6 +39,7 @@ node{
         }        
         
             sh 'docker build -t demo-loan-services:latest .' 
+            she 'docker tag demo-loan-services:latest gshenbagavel/demo-loan-services:latest'
           // sh 'docker tag demo-loan-services gshenbagavel/demo-loan-services:latest'
         }
         
