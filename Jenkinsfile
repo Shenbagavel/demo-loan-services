@@ -45,7 +45,7 @@ node{
     stage('Publish image to Docker Hub') {
         withDockerRegistry([ credentialsId: "DOCKERHUB", url: "" ]) {
         try {
-            sh  'docker push demo-loan-services:latest'
+            sh  'docker push gshenbagavel/demo-loan-services:latest'
         //  sh  'docker push demo-loan-services:$BUILD_NUMBER' 
             }
         catch (exc) {
@@ -55,7 +55,7 @@ node{
        } 
        
     stage('Run Docker Image') {
-                sh 'docker run --net=host -d -p 0.0.0.0:9002:9000 demo-loan-services'
+                sh 'docker run --network=host -d -p 0.0.0.0:9002:9000 demo-loan-services'
  
         }
         
