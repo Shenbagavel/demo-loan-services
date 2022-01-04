@@ -62,8 +62,49 @@ node{
         }
         
     stage('Deploy in Kubenetes') {
+    
+        try{  
+                sh 'kubectl delete deployments demo-loan-services-deployment'
+             
+            }
+        catch (exc) {
+        }        
+          echo 'Kubernetes Delete deployment Failed CHeck'
+        }     
+        
+        try{  
+               
+                sh 'kubectl delete services demo-loan-services-kuberapp'
+            }
+        catch (exc) {
+        }        
+          echo 'Kubernetes Delete Services Failed CHeck'
+        }     
+        
+        try{  
+               sh 'kubectl delete pods --all'
+               
+            }
+        catch (exc) {
+        }        
+          echo 'Kubernetes Delete pods Failed CHeck'
+        }     
+        
+        try{  
+                 
+                sh 'kubectl delete daemonset --all'
+               
+            }
+        catch (exc) {
+        }        
+          echo 'Kubernetes Delete daemon Failed CHeck'
+        }     
+        
+        
+        
         try{  
                 sh 'kubectl apply -f deployment.yml'
+                sh 'kubectl expose deployment/demo-loan-services-deployment'
             }
         catch (exc) {
         }        
