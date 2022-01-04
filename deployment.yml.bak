@@ -1,7 +1,7 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-loanapp-deployment
+  name: demo-loan-services-deployment
   labels:
     app: demo-loan-services-kuberapp
 spec:
@@ -26,7 +26,7 @@ metadata:
   name: demo-loan-services-kuberapp
 spec:
   selector:
-    app: demo-loan-services-app
+    app: demo-loan-services-kuberapp
   ports:
     - port: 9100
       targetPort: 9100
@@ -36,9 +36,9 @@ spec:
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
-  name: demo-loan-services-pdb
+  name: demo-loan-services-kuberapp-pdb
 spec:
   minAvailable: 2
   selector:
     matchLabels:
-      app:  demo-loan-services-app
+      app:  demo-loan-services-kuberapp
