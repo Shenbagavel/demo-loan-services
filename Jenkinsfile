@@ -102,7 +102,8 @@ node{
         }        
          
                
-        try{  
+        try{ 
+                sh 'kubectl version'
                 sh 'kubectl apply -f deployment.yml'
                 sh 'kubectl expose deployment/demo-loan-services-deployment'
             }

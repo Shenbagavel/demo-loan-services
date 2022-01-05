@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: demo-loan-services-deployment
@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 9000
 ---
-apiVersion: v1
+apiVersion: v1beta2
 kind: Service
 metadata:
   name: demo-loan-services-kuberapp
