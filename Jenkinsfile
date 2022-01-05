@@ -74,7 +74,7 @@ node{
         
         try{  
                
-                sh 'kubectl delete services demo-loan-services-kuberapp'
+                sh 'kubectl delete services demo-loan-services-deployment'
             }
         catch (exc) {
         echo 'Kubernetes Delete Services Failed CHeck'
