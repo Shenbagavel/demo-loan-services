@@ -64,6 +64,14 @@ node{
     stage('Deploy in Kubenetes') {
     
         try{  
+                sh 'sudo -i -u opc'
+             
+            }
+        catch (exc) {
+        echo 'Failed in switch to OPC user'
+        }     
+    
+        try{  
                 sh 'kubectl delete deployments demo-loan-services-deployment'
              
             }
@@ -104,7 +112,7 @@ node{
                
         try{ 
                // sh 'kubectl --token=$JENKINS_KUBER_SA_TOKEN version'
-                 sh 'kubectl apply -f deployment.yml
+                 sh 'kubectl apply -f deployment.yml'
               //  sh 'kubectl apply -f deployment.yml  --token $TOKEN_FROM_WITH_CREDENTIALS --server=apiserver.hostname.local'
                 sh 'kubectl expose deployment/demo-loan-services-deployment --token=$JENKINS_KUBER_SA_TOKEN'
             }
@@ -112,7 +120,15 @@ node{
           echo 'Kubernetes Deployment Failed CHeck'
           echo exc.getMessage()
           
-        }     
+        }    
+
+         try{  
+                sh 'sudo -i -u jenkins'
+             
+            }
+        catch (exc) {
+        echo 'Failed in switch to OPC user'
+        }         
     }
        
 }

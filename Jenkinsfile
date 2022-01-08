@@ -64,6 +64,14 @@ node{
     stage('Deploy in Kubenetes') {
     
         try{  
+                sh 'sudo -i -u opc'
+             
+            }
+        catch (exc) {
+        echo 'Failed in switch to OPC user'
+        }     
+    
+        try{  
                 sh 'kubectl delete deployments demo-loan-services-deployment'
              
             }
@@ -112,7 +120,15 @@ node{
           echo 'Kubernetes Deployment Failed CHeck'
           echo exc.getMessage()
           
-        }     
+        }    
+
+         try{  
+                sh 'sudo -i -u jenkins'
+             
+            }
+        catch (exc) {
+        echo 'Failed in switch to jenkins user'
+        }         
     }
        
 }
