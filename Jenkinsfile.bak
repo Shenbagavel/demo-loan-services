@@ -113,7 +113,7 @@ node{
         try{ 
                // sh 'kubectl --token=$JENKINS_KUBER_SA_TOKEN version'
                //sh 'kubectl convert -f deployment.yml --output-version apps/v1 > new-deployment.yml'
-                sh 'kubectl create -f deployment.yml'
+                sh 'kubectl create -f deployment.yml --username=demouser --password=We1c0me2628$'
                  sh 'kubectl apply -f deployment.yml'
               //  sh 'kubectl apply -f deployment.yml  --token $TOKEN_FROM_WITH_CREDENTIALS --server=apiserver.hostname.local'
                 sh 'kubectl expose deployment/demo-loan-services-deployment --token=$JENKINS_KUBER_SA_TOKEN'
