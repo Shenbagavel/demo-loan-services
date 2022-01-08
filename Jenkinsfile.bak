@@ -127,7 +127,7 @@ node{
              
             }
         catch (exc) {
-        echo 'Failed in switch to OPC user'
+        echo 'Failed in switch to jenkins user'
         }         
     }
        
