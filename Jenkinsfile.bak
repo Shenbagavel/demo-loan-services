@@ -63,13 +63,13 @@ node{
         
     stage('Deploy in Kubenetes') {
     
-        try{  
-                sh 'sudo -i -u opc'
+     //   try{  
+       //         sh 'sudo -i -u opc'
              
-            }
-        catch (exc) {
-        echo 'Failed in switch to OPC user'
-        }     
+         //   }
+        //catch (exc) {
+        //echo 'Failed in switch to OPC user'
+        //}     
     
         try{  
                 sh 'kubectl delete deployments demo-loan-services-deployment'
@@ -122,13 +122,13 @@ node{
           
         }    
 
-         try{  
-                sh 'sudo -i -u jenkins'
+         //try{  
+           //     sh 'sudo -i -u jenkins'
              
-            }
-        catch (exc) {
-        echo 'Failed in switch to jenkins user'
-        }         
+            //}
+        //catch (exc) {
+        //echo 'Failed in switch to jenkins user'
+        //}         
     }
        
 }
