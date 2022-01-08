@@ -109,6 +109,7 @@ node{
             }
         catch (exc) {
           echo 'Kubernetes Deployment Failed CHeck'
+          echo exc.getMessage()
           
         }     
     }
