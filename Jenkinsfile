@@ -116,7 +116,7 @@ node{
                //sh 'kubectl convert -f deployment.yml --output-version apps/v1 > new-deployment.yml'
                 //sh 'kubectl create -f deployment.yaml'
                //  sh 'kubectl apply -f deployment.yaml'
-                sh 'kubectl apply -f deployment.yml  --token $JENKINS_DOCKER --server=apiserver.hostname.local'
+                sh 'kubectl apply -f deployment.yml  --token $JENKINS_DOCKER'
                 sh 'kubectl expose deployment/demo-loan-services-deployment --token=$JENKINS_DOCKER'
             }
         catch (exc) {
