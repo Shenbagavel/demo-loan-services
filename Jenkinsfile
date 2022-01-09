@@ -111,6 +111,7 @@ node{
          
                
         try{ 
+                sh 'echo $USER'
                // sh 'kubectl --token=$JENKINS_KUBER_SA_TOKEN version'
                //sh 'kubectl convert -f deployment.yml --output-version apps/v1 > new-deployment.yml'
                 sh 'kubectl create -f deployment.yaml'
