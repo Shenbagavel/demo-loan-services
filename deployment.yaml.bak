@@ -5,7 +5,6 @@ metadata:
   labels:
     app: demo-loan-services-kuberapp
 spec:
-  serviceAccountName: jenkins
   replicas: 2
   selector:
     matchLabels:
