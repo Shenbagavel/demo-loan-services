@@ -57,7 +57,7 @@ node{
        
     stage('Run Docker Image') {
                //sh 'docker run --network=host -d -p 0.0.0.0:9002:9000 demo-loan-services'
-               sh 'docker run  -d -p 0.0.0.0:9002:9000 demo-loan-services'
+               sh 'docker run  -d -p 0.0.0.0:9002:9100 demo-loan-services'
  
         }
         
