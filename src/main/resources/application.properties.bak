@@ -1,3 +1,3 @@
-spring.datasource.url=jdbc:oracle:thin:@168.138.12.96:1521/DEMOPDB
+spring.datasource.url=jdbc:oracle:thin:@demomasterkubervm.subnet12230527.vcn12230527.oraclevcn.com:1521/DEMOPDB
 spring.datasource.username=DEMO
 spring.datasource.password=DEMO
