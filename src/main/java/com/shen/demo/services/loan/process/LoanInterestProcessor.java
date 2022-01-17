@@ -31,6 +31,7 @@ public class LoanInterestProcessor{
 	private static final Logger logger = LogManager.getLogger(LoanInterestProcessor.class);
 	
 	private static final String TOPIC = "demo-loan-topic";
+										 
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
@@ -81,10 +82,10 @@ public class LoanInterestProcessor{
 	return loanAccModelResp;
 }
 
-	public void publishMessageToTopic(String message) {
+	public void publishMessageToTopic(String message,String Key) {
         logger.info(String.format("#### -> Producing message -> %s", message));
 		try{
-        this.kafkaTemplate.send(TOPIC, message);
+        this.kafkaTemplate.send(TOPIC,Key, message);
 		}catch(Exception ex){
 			logger.debug("failed in publish message to Topic "+ex.getMessage());
 			ex.printStackTrace();

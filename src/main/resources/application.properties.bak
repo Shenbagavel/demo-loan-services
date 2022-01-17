@@ -2,10 +2,8 @@ spring.datasource.url=jdbc:oracle:thin:@168.138.12.96:1521/DEMOPDB
 spring.datasource.username=DEMO
 spring.datasource.password=DEMO
 
-server.port= 8881
-
-spring.kafka.consumer.bootstrap-servers=localhost:9092
-spring.kafka.consumer.group-id=mygroup
+spring.kafka.consumer.bootstrap-servers=168.138.12.96:9092
+spring.kafka.consumer.group-id=demo-group
 spring.kafka.consumer.auto-offset-reset=earliest
 spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
