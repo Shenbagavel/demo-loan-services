@@ -32,12 +32,13 @@ class KafkaProducerConfig {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-	@Value("${io.reflectoring.kafka.bootstrap-servers}")
+	@Value("${spring.kafka.producer.bootstrap-servers}")
 	private String bootstrapServers;
 
 	@Bean
 	Map<String, Object> producerConfigs() {
 		Map<String, Object> props = new HashMap<>();
+		//bootstrapServers 
 		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		return props;
@@ -52,7 +53,7 @@ class KafkaProducerConfig {
 	KafkaTemplate<String, String> kafkaTemplate() {
 		KafkaTemplate<String, String> kafkaTemplate = new KafkaTemplate<>(producerFactory());
 		kafkaTemplate.setMessageConverter(new StringJsonMessageConverter());
-		kafkaTemplate.setDefaultTopic("reflectoring-user");
+		kafkaTemplate.setDefaultTopic("demo-loan-topic");
 		kafkaTemplate.setProducerListener(new ProducerListener<String, String>() {
 			@Override
 			public void onSuccess(ProducerRecord<String, String> producerRecord, RecordMetadata recordMetadata) {
