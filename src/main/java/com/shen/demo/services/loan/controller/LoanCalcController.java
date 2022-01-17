@@ -87,6 +87,7 @@ public class LoanCalcController {
      // return new ResponseEntity<>("Loan acc was created successfully.", HttpStatus.CREATED);
 	  	return ResponseEntity.ok(loanAccModel);
     } catch (Exception e) {
+		logger.debug("Failed in Exception calculateinterest:"+e.getMessage());
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }

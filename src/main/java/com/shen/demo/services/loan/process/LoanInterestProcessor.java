@@ -88,6 +88,9 @@ public class LoanInterestProcessor{
 		}catch(Exception ex){
 			logger.debug("failed in publish message to Topic "+ex.getMessage());
 			ex.printStackTrace();
+			StringWriter errors = new StringWriter();
+			ex.printStackTrace(new PrintWriter(errors));
+			logger.info("Stack Trace is:"+ errors.toString());
 		}
     }
 
