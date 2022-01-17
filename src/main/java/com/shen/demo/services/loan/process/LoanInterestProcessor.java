@@ -19,6 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.http.HttpStatus;
 
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
 import com.shen.demo.services.loan.controller.LoanCalcController;
 import com.shen.demo.services.loan.model.LoanAccModel;
 
@@ -26,6 +29,11 @@ import com.shen.demo.services.loan.model.LoanAccModel;
 public class LoanInterestProcessor{
 
 	private static final Logger logger = LogManager.getLogger(LoanInterestProcessor.class);
+	
+	private static final String TOPIC = "demo-loan-topic";
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 	
   public LoanAccModel calculateAmount(LoanAccModel loanAccDto){
 	  LoanAccModel loanAccModelResp = new LoanAccModel();
@@ -73,5 +81,9 @@ public class LoanInterestProcessor{
 	return loanAccModelResp;
 }
 
+	public void publishMessageToTopic(String message) {
+        logger.info(String.format("#### -> Producing message -> %s", message));
+        this.kafkaTemplate.send(TOPIC, message);
+    }
 
 }

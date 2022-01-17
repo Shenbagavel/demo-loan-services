@@ -745,3 +745,11 @@ Caused by: java.net.ConnectException: Connection timed out: connect
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
 	... 67 more
+2022-01-17 19:19:10,763 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 25392 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-17 19:19:10,873 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-17 19:19:10,883 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-17 19:19:15,006 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 4.545 seconds (JVM running for 6.715)
+2022-01-17 19:20:13,570 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Starting LoanCalcApplicationTests using Java 1.8.0_202 on ahilan with PID 12184 (started by megala in D:\Shen\MyProjects\Final\Service_Project\demo-loan-services)
+2022-01-17 19:20:13,586 DEBUG c.s.d.s.l.LoanCalcApplicationTests [main] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-01-17 19:20:13,586 INFO c.s.d.s.l.LoanCalcApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-01-17 19:20:17,622 INFO c.s.d.s.l.LoanCalcApplicationTests [main] Started LoanCalcApplicationTests in 4.355 seconds (JVM running for 6.265)

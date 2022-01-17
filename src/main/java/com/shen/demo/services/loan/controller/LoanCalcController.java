@@ -69,6 +69,7 @@ public class LoanCalcController {
 
   @PostMapping("/calculateInterest")
   public ResponseEntity<LoanAccModel> calculateInterest(@RequestBody LoanAccModel loanAccModel) {
+	  String Message ="";
     try {
     	logger.debug("In calculateinterest");
 		loanAccModel = loanInterestProcessor.calculateAmount(loanAccModel);
@@ -76,6 +77,10 @@ public class LoanCalcController {
       //loanAccRepository.save(new LoanAccModel(loanAccModel.getCustomerNo(), loanAccModel.getLoanAmount(),loanAccModel.getNoOfTenor(),loanAccModel().getTenorUnits,loanAccModel().getInterestRate() ));
 		logger.debug("total payable calcualted :"+loanAccModel.getTotalPayableAmount().toString());
 		loanAccRepository.save(loanAccModel);
+		
+		Message = "Details For Loan Ref :"+ loanAccModel.getId()  +" Caclualted Successfully.Toatal Payable Amount is:"+loanAccModel.getTotalPayableAmount().toString();
+		loanInterestProcessor.publishMessageToTopic(Message);
+		
 		logger.debug("after successfully done save");
 	  	// URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/calculateInterest").buildAndExpand(loanAccModel.getId())
 	  	  //        .toUri();
