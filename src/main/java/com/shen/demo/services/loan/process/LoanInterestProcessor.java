@@ -85,7 +85,8 @@ public class LoanInterestProcessor{
 	public void publishMessageToTopic(String message,String Key) {
         logger.info(String.format("#### -> Producing message -> %s", message));
 		try{
-        this.kafkaTemplate.send(TOPIC,Key, message);
+        //this.kafkaTemplate.send(TOPIC,Key, message);
+		kafkaTemplate.send(TOPIC, message);
 		}catch(Exception ex){
 			logger.debug("failed in publish message to Topic "+ex.getMessage());
 			ex.printStackTrace();
